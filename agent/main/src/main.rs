@@ -1,9 +1,10 @@
-use sysinfo::{NetworkExt, System, SystemExt};
+use sysinfo::{System, SystemExt};
 
 use metrics::cpu;
+use metrics::disk;
 use metrics::memory;
 use metrics::network;
-use metrics::system::{get_composed_system_info, SystemInfo};
+use metrics::system;
 
 fn main() {
     println!("Hello, world!");
@@ -11,14 +12,13 @@ fn main() {
 
     println!("Current System supported: {}", System::IS_SUPPORTED);
 
-    let infos: SystemInfo = get_composed_system_info(&mut sys);
+    disk::get_disks(&mut sys);
 
-    // println!("{:?}", infos);
+    // println!("{:?}", system::get_composed_system_info(&mut sys));
 
     // println!("{:?}", cpu::get_cpu_usage(&mut sys));
 
     // println!("{:?}", memory::get_memory_usage(&mut sys));
     // println!("{:?}", memory::get_memory_swap_usage(&mut sys));
-
-    network::get_network_interface_metric(&mut sys);
+    // println!("{:?}", network::get_network_interface_metric(&mut sys));
 }

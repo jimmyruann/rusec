@@ -25,7 +25,7 @@ pub fn get_composed_system_info(sys: &mut System) -> SystemInfo {
     let global_cpu_info: &Cpu = sys.global_cpu_info();
     let cpus: &[Cpu] = sys.cpus();
 
-    SystemInfo {
+    return SystemInfo {
         os_name: vec![
             sys.name().unwrap_or("".to_string()),
             sys.os_version().unwrap_or("".to_string()),
@@ -42,9 +42,9 @@ pub fn get_composed_system_info(sys: &mut System) -> SystemInfo {
             total: sys.total_memory(),
             swap: sys.total_swap(),
         },
-    }
+    };
 }
 
 pub fn get_uptime(sys: &mut System) -> u64 {
-    sys.uptime()
+    return sys.uptime();
 }
