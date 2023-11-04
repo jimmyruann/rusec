@@ -1,0 +1,6 @@
+CREATE TABLE
+    agents (
+        id UUID PRIMARY KEY DEFAULT GEN_RANDOM_UUID (),
+        system_info JSONB NOT NULL DEFAULT '{}'::JSONB,
+        created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    );

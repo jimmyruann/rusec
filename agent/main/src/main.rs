@@ -1,7 +1,6 @@
 use sysinfo::{System, SystemExt};
 
 use metrics::cpu;
-use metrics::disk;
 use metrics::memory;
 use metrics::network;
 use metrics::system;
@@ -11,8 +10,6 @@ fn main() {
     let mut sys: System = System::new_all();
 
     println!("Current System supported: {}", System::IS_SUPPORTED);
-
-    disk::get_disks(&mut sys);
 
     // println!("{:?}", system::get_composed_system_info(&mut sys));
 

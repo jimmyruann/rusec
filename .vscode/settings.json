@@ -1,4 +1,0 @@
-{
-	"rust-analyzer.linkedProjects": ["agent/main/Cargo.toml"],
-	"cSpell.words": ["cpus", "sysinfo"]
-}
